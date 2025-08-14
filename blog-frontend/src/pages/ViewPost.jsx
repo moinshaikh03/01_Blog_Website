@@ -8,7 +8,10 @@ export default function ViewPost() {
   const [post, setPost] = useState({});
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/posts/${id}`)
+    // axios.get(`http://localhost:5000/api/posts/${id}`)
+    //   .then(res => setPost(res.data))
+    //   .catch(err => console.log(err));
+    axios.get(`https://zero1-blog-website.onrender.com/api/posts/${id}`)
       .then(res => setPost(res.data))
       .catch(err => console.log(err));
   }, [id]);

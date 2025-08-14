@@ -10,7 +10,8 @@ export default function CreatePost() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:5000/api/posts", { title, content });
+    // await axios.post("http://localhost:5000/api/posts", { title, content });
+    await axios.post("https://zero1-blog-website.onrender.com/api/posts", { title, content });
     navigate("/");
   };
 

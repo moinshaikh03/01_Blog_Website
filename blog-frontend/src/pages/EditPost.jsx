@@ -9,7 +9,12 @@ export default function EditPost() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/posts/${id}`)
+    // axios.get(`http://localhost:5000/api/posts/${id}`)
+    //   .then(res => {
+    //     setTitle(res.data.title);
+    //     setContent(res.data.content);
+    //   });
+    axios.get(`https://zero1-blog-website.onrender.com/api/posts/${id}`)
       .then(res => {
         setTitle(res.data.title);
         setContent(res.data.content);
@@ -18,7 +23,8 @@ export default function EditPost() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:5000/api/posts/${id}`, { title, content });
+    // await axios.put(`http://localhost:5000/api/posts/${id}`, { title, content });
+    await axios.put(`https://zero1-blog-website.onrender.com/api/posts/${id}`, { title, content });
     navigate("/");
   };
 

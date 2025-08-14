@@ -7,13 +7,17 @@ export default function Home() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/posts")
+    // axios.get("http://localhost:5000/api/posts")
+    //   .then(res => setPosts(res.data))
+    //   .catch(err => console.log(err));
+    axios.get("https://zero1-blog-website.onrender.com/api/posts")
       .then(res => setPosts(res.data))
       .catch(err => console.log(err));
   }, []);
 
   const deletePost = async (id) => {
-    await axios.delete(`http://localhost:5000/api/posts/${id}`);
+    // await axios.delete(`http://localhost:5000/api/posts/${id}`);
+    await axios.delete(`https://zero1-blog-website.onrender.com/api/posts/${id}`);
     setPosts(posts.filter(post => post._id !== id));
   };
 
